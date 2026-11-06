@@ -221,9 +221,19 @@
   function renderCheck(term, unit) {
     var check = term.check;
     if (!check || !check.choices || !check.choices.length) return null;
-    var feedback = el("p", { className: "feedback", role: "status", "aria-live": "polite" });
     var name = "check-" + slugify(unit.id) + "-" + slugify(term.word);
 
+    if (!Number.isInteger(check.answer) || check.answer < 0 || check.answer >= check.choices.length) {
+      return el("section", { className: "check" }, [
+        el("h4", { text: "🧠 Check Your Understanding!" }),
+        el("p", { id: name, text: check.question }),
+        el("ul", null, check.choices.map(function (choice, i) {
+          return el("li", null, [String.fromCharCode(65 + i) + ") " + choice]);
+        }))
+      ]);
+    }
+
+    var feedback = el("p", { className: "feedback", role: "status", "aria-live": "polite" });
     var buttons = check.choices.map(function (choice, i) {
       var letter = String.fromCharCode(65 + i);
       return el("button", {
