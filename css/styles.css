@@ -122,8 +122,29 @@ a { color: var(--primary); }
 .term-card.highlight { box-shadow: 0 0 0 4px #fbbf24, var(--shadow); }
 .term-card:focus { outline: none; }
 .term-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.5rem; }
-.term-header h3 { margin: 0 0 0.5rem; font-size: 1.4rem; }
+.term-header h2 { margin: 0 0 0.5rem; font-size: 1.4rem; }
 .term-location { font-size: 0.85rem; }
+
+.term-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.term-nav-link, .term-nav-back {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: var(--card);
+  text-decoration: none;
+  text-align: center;
+}
+.term-nav-link { min-width: 8rem; }
+.term-nav-back { background: var(--primary-light); }
+.term-nav-link.muted { color: var(--muted); }
+.term-nav-link:not(.muted):hover, .term-nav-back:hover { background: var(--primary); color: #fff; }
 
 .frayer {
   display: grid;
@@ -132,6 +153,26 @@ a { color: var(--primary); }
 }
 .frayer-box { border-radius: 10px; padding: 0.75rem 1rem; }
 .frayer-box h4 { margin: 0 0 0.4rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.03em; }
+.frayer-toggle {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+}
+.frayer-toggle:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+.frayer.has-expanded .frayer-box.expanded {
+  grid-column: 1 / -1;
+  min-height: 16rem;
+  padding: 1.25rem 1.5rem;
+  font-size: 1.1rem;
+}
+.frayer-box.expanded h4 { font-size: 1.1rem; margin-bottom: 0.75rem; }
 .frayer-box p, .frayer-box ul { margin: 0; }
 .frayer-box ul { padding-left: 1.2rem; }
 .frayer-definition { background: var(--definition); }
@@ -146,7 +187,9 @@ a { color: var(--primary); }
   border: 1px solid #e2e8f0;
 }
 .visual h4, .related h4, .check h4, .practice h4 { margin: 0 0 0.5rem; }
-.visual img { max-width: 100%; border-radius: 8px; }
+.visual img { display: block; max-width: 100%; max-height: 22rem; border-radius: 8px; }
+.visual a { display: inline-block; margin-top: 0.5rem; }
+.search-result { margin: 0.5rem 0; }
 
 /* ---------- Related words ---------- */
 .related { background: #fffaf2; border-color: #fcd9a8; }
@@ -202,7 +245,10 @@ a { color: var(--primary); }
 /* ---------- Small screens ---------- */
 @media (max-width: 700px) {
   .frayer, .activities { grid-template-columns: 1fr; }
-  
+  .term-navigation { flex-wrap: wrap; }
+  .term-nav-link, .term-nav-back { flex: 1; }
+}
+
 @media print {
   .site-header, .lesson-nav, .practice textarea { display: none; }
   .term-card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }

@@ -143,10 +143,28 @@
   }
 
   function frayerBox(title, content, className) {
-    return el("section", { className: "frayer-box " + className }, [
-      el("h4", { text: title }),
+    var box = el("section", { className: "frayer-box " + className }, [
+      el("h4", null, [
+        el("button", {
+          type: "button",
+          className: "frayer-toggle",
+          "aria-expanded": "false",
+          onClick: function (event) {
+            var container = box.parentNode;
+            var expanded = !box.classList.contains("expanded");
+            container.classList.toggle("has-expanded", expanded);
+            Array.prototype.forEach.call(container.children, function (sibling) {
+              var isExpanded = sibling === box && expanded;
+              sibling.classList.toggle("expanded", isExpanded);
+              sibling.hidden = expanded && !isExpanded;
+              sibling.querySelector(".frayer-toggle").setAttribute("aria-expanded", String(isExpanded));
+            });
+          }
+        }, [title])
+      ]),
       content
     ]);
+    return box;
   }
 
   function renderFrayer(term) {
@@ -161,8 +179,16 @@
   function renderVisual(term) {
     if (!term.image && !term.miniSimIdea) return null;
     return el("section", { className: "visual" }, [
-      el("h4", { text: "🖼️ Image / Mini-Sim Idea" }),
-      term.image ? el("img", { src: term.image, alt: "Picture showing " + term.word, loading: "lazy" }) : null,
+      el("h4", { text: "Visuals" }),
+      term.image ? el("img", { src: term.image, alt: "Illustration of " + term.word, loading: "lazy" }) : null,
+      term.imageSearch ? el("p", null, [
+        el("a", {
+          href: "https://www.google.com/search?tbm=isch&q=" + encodeURIComponent(term.word),
+          target: "_blank",
+          rel: "noopener noreferrer",
+          text: "Find more images of " + term.word + " on Google"
+        })
+      ]) : null,
       term.miniSimIdea ? el("p", null, [el("strong", { text: "Mini-Sim Idea: " }), term.miniSimIdea]) : null
     ]);
   }
@@ -210,11 +236,11 @@
     }
 
     return el("section", { className: "related" }, [
-      el("h4", { text: "🔗 Related Words: Cause & Effect" }),
-      group("➡️ Effects: what " + word + " causes", "Cause → Effect", groups.causes, "group-causes"),
-      group("⬅️ Causes: what leads to " + word, "Cause → Effect", groups.causedBy, "group-caused-by"),
-      group("🧩 Parts of a system", "How the pieces fit together", groups.parts, "group-parts"),
-      group("💡 Also connected", "Words that go together", groups.related, "group-related")
+      el("h4", { text: "Related Words: Cause & Effect" }),
+      group("Effects: what " + word + " causes", "Cause → Effect", groups.causes, "group-causes"),
+      group("Causes: what leads to " + word, "Cause → Effect", groups.causedBy, "group-caused-by"),
+      group("Parts of a system", "How the pieces fit together", groups.parts, "group-parts"),
+      group("Also connected", "Words that go together", groups.related, "group-related")
     ]);
   }
 
@@ -225,7 +251,7 @@
 
     if (!Number.isInteger(check.answer) || check.answer < 0 || check.answer >= check.choices.length) {
       return el("section", { className: "check" }, [
-        el("h4", { text: "🧠 Check Your Understanding!" }),
+        el("h4", { text: "Check Your Understanding" }),
         el("p", { id: name, text: check.question }),
         el("ul", null, check.choices.map(function (choice, i) {
           return el("li", null, [String.fromCharCode(65 + i) + ") " + choice]);
@@ -248,18 +274,18 @@
           if (correct) {
             buttons.forEach(function (b) { b.disabled = true; });
             feedback.className = "feedback feedback-correct";
-            feedback.textContent = "✅ Correct! " + (check.explanation || "");
+            feedback.textContent = "Correct! " + (check.explanation || "");
           } else {
             btn.disabled = true;
             feedback.className = "feedback feedback-incorrect";
-            feedback.textContent = "❌ Not quite. Look back at the Frayer Model and try again!";
+            feedback.textContent = "Not quite. Review the definition and try again.";
           }
         }
       }, [el("span", { className: "choice-letter", text: letter + ")" }), " " + choice]);
     });
 
     return el("section", { className: "check" }, [
-      el("h4", { text: "🧠 Check Your Understanding!" }),
+      el("h4", { text: "Check Your Understanding" }),
       el("p", { id: name, text: check.question }),
       el("div", { className: "choices", role: "group", "aria-labelledby": name }, buttons),
       feedback
@@ -278,7 +304,7 @@
       status.textContent = "Saved on this device.";
     });
     return el("section", { className: "practice" }, [
-      el("h4", { text: "✍️ Put it in Practice!" }),
+      el("h4", { text: "Put it in Practice" }),
       el("label", { "for": id, text: term.practice }),
       box,
       status
@@ -291,7 +317,7 @@
     var lesson = entry.lesson;
     return el("article", { className: "term-card", id: "term-" + slugify(term.word), tabindex: "-1" }, [
       el("header", { className: "term-header" }, [
-        el("h3", { text: "Frayer Model: " + capitalize(term.word) }),
+        el("h2", { text: capitalize(term.word) }),
         el("a", {
           className: "term-location",
           href: "#/unit/" + encodeURIComponent(unit.id) + "/lesson/" + lesson.number,
@@ -321,12 +347,12 @@
     ]);
 
     var intro = el("section", { className: "unit-intro" }, [
-      el("h2", { text: "Unit " + unit.id + ": " + unit.title + " - Vocabulary Explorer " + (unit.emoji || "") }),
+      el("h2", { text: "Unit " + unit.id + ": " + unit.title + " - Vocabulary Explorer" }),
       unit.intro ? el("p", { text: unit.intro }) : null,
       el("details", { className: "how-to" }, [
         el("summary", { text: "How to Use This Page" }),
-        el("p", { text: "Each word is presented in a \u201cFrayer Model.\u201d This tool helps you understand a word from all angles. For each term, you'll also find a quick question to check your understanding and a prompt to practice using the word." }),
-        el("p", { text: "Look for the 🔗 Related Words section to see cause and effect connections between words. Click any highlighted word to jump to its entry. Grey words don't have a full entry yet." })
+        el("p", { text: "Open a word to explore its definition, characteristics, examples, and practice activities." }),
+        el("p", { text: "Related words show cause-and-effect connections. Click a highlighted word to open its entry. Grey words don't have a full entry yet." })
       ])
     ]);
 
@@ -337,8 +363,12 @@
         el("h2", { className: "lesson-title", text: "Lesson " + lesson.number + ": " + (lesson.question || "") }),
         chipList("Official Vocabulary", lesson.officialVocabulary, "official"),
         chipList("Tricky Words", lesson.trickyWords, "tricky"),
-        terms.length ? null : el("p", { className: "muted", text: "Frayer Models for this lesson are coming soon." })
-      ].concat(terms.map(renderTerm)));
+        terms.length ? el("p", { className: "chip-row" }, [
+          el("strong", { text: "Word entries: " })
+        ].concat(terms.map(function (entry) {
+          return wordLink(entry.term.word);
+        }))) : el("p", { className: "muted", text: "Word entries for this lesson are coming soon." })
+      ]);
     });
 
     return el("div", { className: "unit-view" }, [intro, nav].concat(lessonSections));
@@ -405,19 +435,58 @@
         })
       )));
     }
-    return el("div", { className: "search-view" }, children.concat(results.map(renderTerm)));
+    return el("div", { className: "search-view" }, children.concat(results.map(function (entry) {
+      return el("p", { className: "search-result" }, [
+        wordLink(entry.term.word, "chip chip-word"),
+        el("span", { className: "muted small", text: " Unit " + entry.unit.id + ", Lesson " + entry.lesson.number })
+      ]);
+    })));
   }
 
   /* ---------- Routing ---------- */
 
   var currentUnit = units[0] || null;
 
+  function getUnitTerms(unit) {
+    return (unit.lessons || []).reduce(function (entries, lesson) {
+      return entries.concat((lesson.terms || []).map(function (term) {
+        return termIndex[slugify(term.word)];
+      }).filter(Boolean));
+    }, []);
+  }
+
+  function renderTermPage(entry) {
+    var entries = getUnitTerms(entry.unit);
+    var index = entries.indexOf(entry);
+    var previous = index > 0 ? entries[index - 1] : null;
+    var next = index >= 0 && index < entries.length - 1 ? entries[index + 1] : null;
+    function navigation() {
+      function termLink(target, label) {
+        return target ? el("a", {
+          className: "term-nav-link",
+          href: "#/term/" + slugify(target.term.word),
+          text: label + ": " + target.term.word
+        }) : el("span", { className: "term-nav-link muted", text: label });
+      }
+      return el("nav", { className: "term-navigation", "aria-label": "Word navigation" }, [
+        termLink(previous, "Previous"),
+        el("a", {
+          className: "term-nav-back",
+          href: "#/unit/" + encodeURIComponent(entry.unit.id) + "/lesson/" + entry.lesson.number,
+          text: "Back to Lesson " + entry.lesson.number
+        }),
+        termLink(next, "Next")
+      ]);
+    }
+    return el("div", { className: "term-view" }, [navigation(), renderTerm(entry), navigation()]);
+  }
+
   function populateUnitSelect() {
     unitSelect.innerHTML = "";
     units.forEach(function (unit) {
       unitSelect.appendChild(el("option", { value: unit.id, text: "Unit " + unit.id + ": " + unit.title }));
     });
-    unitSelect.appendChild(el("option", { value: "__az", text: "📖 All Words A–Z" }));
+    unitSelect.appendChild(el("option", { value: "__az", text: "All Words A–Z" }));
   }
 
   function show(node, focusId) {
@@ -455,7 +524,7 @@
       var entry = termIndex[parts[1]];
       currentUnit = entry.unit;
       unitSelect.value = currentUnit.id;
-      show(renderUnit(currentUnit), "term-" + parts[1]);
+      show(renderTermPage(entry), "term-" + parts[1]);
       return;
     }
 
