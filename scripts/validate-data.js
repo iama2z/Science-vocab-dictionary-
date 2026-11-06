@@ -75,7 +75,7 @@ units.forEach((unit) => {
         const c = term.check;
         if (!isNonEmptyString(c.question)) errors.push(`${t}: check is missing "question"`);
         if (!Array.isArray(c.choices) || c.choices.length < 2) errors.push(`${t}: check needs at least 2 choices`);
-        else if (!Number.isInteger(c.answer) || c.answer < 0 || c.answer >= c.choices.length) {
+        else if (c.answer !== undefined && (!Number.isInteger(c.answer) || c.answer < 0 || c.answer >= c.choices.length)) {
           errors.push(`${t}: check "answer" must be 0 to ${c.choices.length - 1} (0 = A, 1 = B, ...)`);
         }
       }
