@@ -4,7 +4,6 @@ window.VOCAB_DATA = window.VOCAB_DATA || { units: [] };
 window.VOCAB_DATA.units.push({
   "id": "8.3",
   "title": "Forces at a Distance",
-  "emoji": "🧭",
   "intro": "Welcome, scientists! This page is your home base for mastering the key vocabulary in our unit on magnetism and forces. Understanding these words is like having a toolkit—the more tools you have, the better you can build and explain scientific ideas.",
   "lessons": [
     {
@@ -31,7 +30,8 @@ window.VOCAB_DATA.units.push({
             "A glass window.",
             "An aluminum can."
           ],
-          "image": "",
+          "image": "images/magnet-preview.svg",
+          "imageSearch": true,
           "miniSimIdea": "An interactive where students can drag two bar magnets near each other and see the lines of force showing either attraction or repulsion when the poles are flipped.",
           "check": {
             "question": "A magnet will attract which of the following objects?",
