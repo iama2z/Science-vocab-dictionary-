@@ -176,8 +176,75 @@
     ]);
   }
 
+  function renderMagnetMiniSim() {
+    var flipped = false;
+    var leftMagnet = el("div", { className: "sim-magnet", role: "img", "aria-label": "Left magnet, north pole on the left and south pole on the right" }, [
+      el("span", { className: "sim-pole sim-north", text: "N" }),
+      el("span", { className: "sim-pole sim-south", text: "S" })
+    ]);
+    var rightNorth = el("span", { className: "sim-pole sim-north", text: "N" });
+    var rightSouth = el("span", { className: "sim-pole sim-south", text: "S" });
+    var rightMagnet = el("div", { className: "sim-magnet", role: "img", "aria-label": "Right magnet, north pole on the left and south pole on the right" }, [
+      rightNorth,
+      rightSouth
+    ]);
+    var arrows = el("span", { className: "sim-force-arrows", "aria-hidden": "true" });
+    var stage = el("div", { className: "sim-magnet-stage" }, [leftMagnet, arrows, rightMagnet]);
+    var distance = el("input", {
+      id: "magnet-sim-distance",
+      type: "range",
+      min: "0",
+      max: "100",
+      value: "55"
+    });
+    var status = el("p", { className: "sim-status", role: "status", "aria-live": "polite" });
+    var flipButton = el("button", {
+      className: "sim-button",
+      type: "button",
+      "aria-pressed": "false",
+      onClick: function () {
+        flipped = !flipped;
+        flipButton.setAttribute("aria-pressed", String(flipped));
+        update();
+      }
+    }, ["Flip right magnet"]);
+
+    function update() {
+      var leftFacing = "S";
+      var rightFacing = flipped ? "S" : "N";
+      var attract = leftFacing !== rightFacing;
+      var distanceValue = Number(distance.value);
+      var spacing = Math.round(distanceValue * 0.32);
+      stage.style.setProperty("--sim-spacing", spacing + "px");
+      rightNorth.textContent = flipped ? "S" : "N";
+      rightSouth.textContent = flipped ? "N" : "S";
+      rightMagnet.setAttribute("aria-label", "Right magnet, " +
+        (flipped ? "south pole on the left and north pole on the right" : "north pole on the left and south pole on the right"));
+      stage.classList.toggle("sim-attract", attract);
+      stage.classList.toggle("sim-repel", !attract);
+      arrows.textContent = attract ? "→   ←" : "←   →";
+      status.textContent = (attract
+        ? "Opposite poles (" + leftFacing + " and " + rightFacing + ") face each other, so the magnets attract."
+        : "Like poles (" + leftFacing + " and " + rightFacing + ") face each other, so the magnets repel.") +
+        (distanceValue < 30 ? " The magnets are close together." :
+          distanceValue > 70 ? " The magnets are far apart." : " Move them closer to see the interaction more clearly.");
+    }
+
+    distance.addEventListener("input", update);
+    update();
+
+    return el("section", { className: "mini-sim", "aria-labelledby": "magnet-sim-title" }, [
+      el("h4", { id: "magnet-sim-title", text: "Try the Magnet Mini-Sim" }),
+      el("p", { className: "muted small", text: "Move the magnets closer or farther apart, then flip the right magnet to compare attraction and repulsion." }),
+      stage,
+      el("label", { className: "sim-slider-label", "for": distance.id }, ["Distance between magnets", distance]),
+      el("div", { className: "sim-controls" }, [flipButton]),
+      status
+    ]);
+  }
+
   function renderVisual(term) {
-    if (!term.image && !term.imageSearch && !term.miniSimIdea) return null;
+    if (!term.image && !term.imageSearch && !term.miniSimIdea && !term.miniSim) return null;
     return el("section", { className: "visual" }, [
       el("h4", { text: "Visuals" }),
       term.image ? el("img", { src: term.image, alt: "Illustration of " + term.word, loading: "lazy" }) : null,
@@ -191,7 +258,8 @@
           text: "Find " + (term.image ? "more " : "") + "images of " + term.word + " on Google (opens in a new tab)"
         })
       ]) : null,
-      term.miniSimIdea ? el("p", null, [el("strong", { text: "Mini-Sim Idea: " }), term.miniSimIdea]) : null
+      term.miniSimIdea ? el("p", null, [el("strong", { text: "Mini-Sim Idea: " }), term.miniSimIdea]) : null,
+      term.miniSim === "magnet-poles" ? renderMagnetMiniSim() : null
     ]);
   }
 

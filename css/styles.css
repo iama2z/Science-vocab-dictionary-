@@ -191,6 +191,71 @@ a { color: var(--primary); }
 .visual a { display: inline-block; margin-top: 0.5rem; }
 .search-result { margin: 0.5rem 0; }
 
+/* ---------- Mini-simulations ---------- */
+.mini-sim {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #f8fbff;
+}
+.mini-sim h4 { margin: 0 0 0.25rem; }
+.mini-sim > p { margin: 0.25rem 0 0.75rem; }
+.sim-magnet-stage {
+  --sim-spacing: 18px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 3.5rem minmax(0, 1fr);
+  column-gap: var(--sim-spacing);
+  align-items: center;
+  max-width: 38rem;
+  min-height: 7rem;
+  margin: 0 auto 0.75rem;
+}
+.sim-magnet {
+  display: flex;
+  min-width: 0;
+  height: 3.25rem;
+  border-radius: 7px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.18);
+}
+.sim-pole {
+  display: grid;
+  flex: 1;
+  place-items: center;
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+.sim-north { background: #c83d42; }
+.sim-south { background: #2867a8; }
+.sim-force-arrows {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+.sim-repel .sim-force-arrows { color: #b45309; }
+.sim-slider-label { display: block; max-width: 38rem; margin: 0 auto; font-weight: 600; }
+.sim-slider-label input { display: block; width: 100%; margin: 0.25rem 0 0; accent-color: var(--primary); }
+.sim-controls { max-width: 38rem; margin: 0.75rem auto 0; }
+.sim-button {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid #94a3b8;
+  border-radius: 7px;
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+.sim-button:hover, .sim-button:focus-visible { border-color: var(--primary); color: var(--primary); }
+.sim-status {
+  max-width: 38rem;
+  min-height: 3rem;
+  margin: 0.75rem auto 0;
+  font-weight: 600;
+}
+
 /* ---------- Related words ---------- */
 .related { background: #fffaf2; border-color: #fcd9a8; }
 .relation-group h5 { margin: 0.75rem 0 0; font-size: 1rem; }
@@ -247,6 +312,8 @@ a { color: var(--primary); }
   .frayer, .activities { grid-template-columns: 1fr; }
   .term-navigation { flex-wrap: wrap; }
   .term-nav-link, .term-nav-back { flex: 1; }
+  .sim-magnet-stage { grid-template-columns: minmax(0, 1fr) 2.5rem minmax(0, 1fr); }
+  .sim-force-arrows { font-size: 1rem; }
 }
 
 @media print {
