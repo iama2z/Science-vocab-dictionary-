@@ -5,6 +5,7 @@ An interactive digital dictionary that helps students look back at the vocabular
 Each word is shown as a **Frayer Model** (Definition, Key Characteristics, Examples, Non-Examples) along with:
 
 - 🖼️ an optional image / mini-sim idea
+- 🧲 an interactive magnet mini-sim prototype on the **magnet** entry
 - 🔗 **Related Words: Cause & Effect** – shows what a word *causes*, what *causes it*, which system it is *part of*, and other connections. Related words that have their own entry are clickable.
 - 🧠 **Check Your Understanding!** – a multiple-choice question with instant feedback
 - ✍️ **Put it in Practice!** – a writing prompt (answers are saved in the student's browser only)

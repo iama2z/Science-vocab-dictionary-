@@ -33,6 +33,7 @@ window.VOCAB_DATA.units.push({
           "image": "images/magnet-preview.svg",
           "imageSearch": true,
           "miniSimIdea": "An interactive where students can drag two bar magnets near each other and see the lines of force showing either attraction or repulsion when the poles are flipped.",
+          "miniSim": "magnet-poles",
           "check": {
             "question": "A magnet will attract which of the following objects?",
             "choices": [
