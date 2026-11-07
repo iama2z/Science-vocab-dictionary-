@@ -34,7 +34,7 @@ window.VOCAB_DATA.units.push({
           examples: ["Example 1.", "Example 2."],
           nonExamples: ["Non-example 1.", "Non-example 2."],
           image: "",                // optional: path or URL to an image, e.g. "images/word-one.png"
-          imageSearch: false,       // optional: show a Google Images search link
+          imageSearch: "word one science diagram", // optional: Google Images search query; true uses the word
           miniSimIdea: "",          // optional
           check: {
             question: "Check-your-understanding question?",
