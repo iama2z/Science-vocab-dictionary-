@@ -177,16 +177,18 @@
   }
 
   function renderVisual(term) {
-    if (!term.image && !term.miniSimIdea) return null;
+    if (!term.image && !term.imageSearch && !term.miniSimIdea) return null;
     return el("section", { className: "visual" }, [
       el("h4", { text: "Visuals" }),
       term.image ? el("img", { src: term.image, alt: "Illustration of " + term.word, loading: "lazy" }) : null,
       term.imageSearch ? el("p", null, [
         el("a", {
-          href: "https://www.google.com/search?tbm=isch&q=" + encodeURIComponent(term.word),
+          href: "https://www.google.com/search?tbm=isch&q=" + encodeURIComponent(
+            typeof term.imageSearch === "string" ? term.imageSearch : term.word
+          ),
           target: "_blank",
           rel: "noopener noreferrer",
-          text: "Find more images of " + term.word + " on Google"
+          text: "Find " + (term.image ? "more " : "") + "images of " + term.word + " on Google (opens in a new tab)"
         })
       ]) : null,
       term.miniSimIdea ? el("p", null, [el("strong", { text: "Mini-Sim Idea: " }), term.miniSimIdea]) : null

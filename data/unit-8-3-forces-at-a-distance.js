@@ -74,6 +74,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Wire",
+          "imageSearch": "copper wire electric circuit",
           "definition": "A thin, flexible strand of metal (usually copper) that electricity can easily travel through. It's used to connect parts of an electric circuit.",
           "characteristics": [
             "It is a conductor of electricity.",
@@ -104,6 +105,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Speaker",
+          "imageSearch": "speaker parts diagram electromagnet",
           "definition": "A device that is designed to turn electrical signals into sound that you can hear.",
           "characteristics": [
             "It contains a permanent magnet and an electromagnet (a coil of wire).",
@@ -134,6 +136,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Spider",
+          "imageSearch": "loudspeaker spider voice coil diagram",
           "definition": "In a speaker, the spider is a flexible, corrugated ring that holds the voice coil in the correct position while still allowing it to move back and forth.",
           "characteristics": [
             "It looks like a flexible fabric ring with wave-like folds.",
@@ -162,6 +165,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Vibrate",
+          "imageSearch": "sound vibration speaker diagram",
           "definition": "To move back and forth or up and down very rapidly.",
           "characteristics": [
             "It is a type of motion.",
@@ -191,6 +195,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "System",
+          "imageSearch": "speaker system parts diagram",
           "definition": "A set of connected parts or components that work together to form a complex whole.",
           "characteristics": [
             "Changing one part of a system can affect the other parts.",
@@ -220,6 +225,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Component",
+          "imageSearch": "speaker components diagram",
           "definition": "A single part or piece of a larger system.",
           "characteristics": [
             "Components work together.",
@@ -324,6 +330,7 @@ window.VOCAB_DATA.units.push({
       "terms": [
         {
           "word": "Attraction",
+          "imageSearch": "magnetic attraction opposite poles diagram",
           "definition": "A force that pulls objects toward one another.",
           "characteristics": [
             "In magnetism, opposite poles attract (North pulls South).",
@@ -353,6 +360,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Repulsion",
+          "imageSearch": "magnetic repulsion like poles diagram",
           "definition": "A force that pushes objects away from one another.",
           "characteristics": [
             "In magnetism, like poles repel (North pushes North, South pushes South).",
@@ -411,6 +419,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Orientation",
+          "imageSearch": "magnet pole orientation diagram",
           "definition": "The way an object is positioned or aimed in relation to its surroundings. For magnets, it's which way the North and South poles are facing.",
           "characteristics": [
             "A magnet's orientation determines whether it will attract or repel another magnet.",
@@ -439,6 +448,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Force Pair",
+          "imageSearch": "newton third law force pairs diagram",
           "definition": "For every action (force), there is an equal and opposite reaction (force). These two forces are the force pair.",
           "characteristics": [
             "This is Newton's Third Law of Motion.",
@@ -466,6 +476,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Kinetic Energy",
+          "imageSearch": "kinetic energy moving objects diagram",
           "definition": "The energy an object has because it is in motion.",
           "characteristics": [
             "The faster an object moves, the more kinetic energy it has.",
@@ -512,6 +523,7 @@ window.VOCAB_DATA.units.push({
       "terms": [
         {
           "word": "Electromagnet",
+          "imageSearch": "electromagnet coil battery diagram",
           "definition": "Think of it as a temporary magnet that you can switch on and off. It's made from a coil of wire, and it only becomes magnetic when electricity flows through that wire.",
           "characteristics": [
             "It needs electricity to work. No power, no magnet!",
@@ -544,6 +556,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Independent Variable",
+          "imageSearch": "independent variable experiment graph diagram",
           "definition": "In a scientific experiment, this is the one thing that you, the scientist, intentionally change or test.",
           "characteristics": [
             "Think \"I\" for Independent variable: the thing I change.",
@@ -572,6 +585,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Dependent Variable",
+          "imageSearch": "dependent variable experiment graph diagram",
           "definition": "In a scientific experiment, this is the thing that you observe or measure to see if it was affected by the change you made (the independent variable).",
           "characteristics": [
             "Think \"D\" for Dependent variable: the Data you collect.",
@@ -685,6 +699,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Vacuum",
+          "imageSearch": "vacuum chamber science diagram",
           "definition": "A space that is completely empty of all matter, including air.",
           "characteristics": [
             "Sound cannot travel in a vacuum because it needs a medium (like air or water) to vibrate.",
@@ -712,6 +727,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Transfer",
+          "imageSearch": "energy transfer diagram",
           "definition": "To move something from one place to another. In science, we often talk about the transfer of energy.",
           "characteristics": [
             "Energy can be transferred between objects.",
@@ -759,6 +775,7 @@ window.VOCAB_DATA.units.push({
       "terms": [
         {
           "word": "Magnetic Field",
+          "imageSearch": "bar magnet magnetic field lines diagram",
           "definition": "The invisible area of force that surrounds a magnet. This field is what allows magnets to push or pull on things without touching them.",
           "characteristics": [
             "It is 3-dimensional.",
@@ -789,6 +806,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "North Pole",
+          "imageSearch": "bar magnet north south poles diagram",
           "definition": "The two ends of a magnet where the magnetic force is the strongest. Every magnet has both a north and a south pole.",
           "characteristics": [
             "The North-seeking pole of a magnet (or compass) is the one that points toward Earth's geographic North Pole.",
@@ -818,6 +836,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "South Pole",
+          "imageSearch": "bar magnet north south poles diagram",
           "definition": "The two ends of a magnet where the magnetic force is the strongest. Every magnet has both a north and a south pole.",
           "characteristics": [
             "The North-seeking pole of a magnet (or compass) is the one that points toward Earth's geographic North Pole.",
@@ -847,6 +866,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Compass",
+          "imageSearch": "compass needle magnetic field diagram",
           "definition": "A tool used for navigation that shows direction. It has a small, lightweight magnet that is free to spin.",
           "characteristics": [
             "The needle of a compass is a permanent magnet.",
@@ -903,6 +923,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Three-Dimensional",
+          "imageSearch": "three dimensional length width height diagram",
           "definition": "Describing an object or space that has length, width, and height (or depth).",
           "characteristics": [
             "It is not flat.",
@@ -932,6 +953,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Align",
+          "imageSearch": "compass needles align magnetic field diagram",
           "definition": "To place or arrange things in a straight line or in a correct relative position.",
           "characteristics": [
             "A compass needle will align itself with a magnetic field.",
@@ -960,6 +982,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Polarity",
+          "imageSearch": "magnet polarity north south diagram",
           "definition": "The property of having two distinct and opposite ends or poles. In magnetism, this refers to having a North and a South pole.",
           "characteristics": [
             "It determines the direction of the magnetic field.",
@@ -989,6 +1012,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Pattern",
+          "imageSearch": "scientific data pattern graph",
           "definition": "A set of repeating or predictable characteristics, events, or objects. Scientists look for patterns in data to understand rules of nature.",
           "characteristics": [
             "Patterns can help you make predictions.",
@@ -1029,6 +1053,7 @@ window.VOCAB_DATA.units.push({
       "terms": [
         {
           "word": "Simulation",
+          "imageSearch": "magnetic field computer simulation",
           "definition": "A computer model that imitates a real-world system or process.",
           "characteristics": [
             "It allows us to test things that are too big, too small, too fast, or too dangerous to test in real life.",
@@ -1057,6 +1082,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Configuration",
+          "imageSearch": "magnets different configurations diagram",
           "definition": "An arrangement of parts or elements in a particular form or combination.",
           "characteristics": [
             "Changing the configuration of a system can change how it works.",
@@ -1085,6 +1111,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Gap",
+          "imageSearch": "gap between two magnets diagram",
           "definition": "An empty space or interval between two objects.",
           "characteristics": [
             "The size of the gap between a magnet and another object affects the strength of the magnetic force between them.",
@@ -1177,6 +1204,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Cause and Effect",
+          "imageSearch": "cause and effect science diagram",
           "definition": "A relationship between two events where one event (the cause) makes another event (the effect) happen.",
           "characteristics": [
             "The cause happens before the effect.",
@@ -1204,6 +1232,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Interaction",
+          "imageSearch": "magnetic interaction two magnets diagram",
           "definition": "An occasion when two or more things have an effect on each other. It's the \"event\" of interacting.",
           "characteristics": [
             "It is the result of forces acting between objects.",
@@ -1243,6 +1272,7 @@ window.VOCAB_DATA.units.push({
       "terms": [
         {
           "word": "Potential Energy",
+          "imageSearch": "potential energy examples diagram",
           "definition": "Stored energy that an object has due to its position or its arrangement of parts. It's the \"potential\" to do work or be converted into other forms of energy.",
           "characteristics": [
             "It is stored energy, not energy of motion.",
@@ -1274,6 +1304,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Stored Energy",
+          "imageSearch": "stored potential energy spring diagram",
           "definition": "Another term for Potential Energy. It is energy that has been saved up in an object or system, ready to be used.",
           "characteristics": [
             "It is energy of position or arrangement, not motion.",
@@ -1304,6 +1335,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Arrangement",
+          "imageSearch": "magnets arrangement configuration diagram",
           "definition": "The way in which things are organized or placed.",
           "characteristics": [
             "The arrangement of atoms in a material determines if it can be a magnet.",
@@ -1341,6 +1373,7 @@ window.VOCAB_DATA.units.push({
       "terms": [
         {
           "word": "Electric Current",
+          "imageSearch": "electric current flow circuit diagram",
           "definition": "The flow of tiny electrical particles (electrons) through a material, like a wire.",
           "characteristics": [
             "Think of it like water flowing through a pipe.",
@@ -1371,6 +1404,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Electric Circuit",
+          "imageSearch": "simple electric circuit diagram",
           "definition": "A complete, closed path that an electric current can flow through.",
           "characteristics": [
             "It must have a power source (like a battery).",
@@ -1401,6 +1435,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Frequency",
+          "imageSearch": "sound wave frequency diagram",
           "definition": "The rate at which something occurs over a particular period of time. In sound, it's the number of vibrations or waves that pass a point per second.",
           "characteristics": [
             "It is measured in Hertz (Hz).",
@@ -1431,6 +1466,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Pitch",
+          "imageSearch": "sound wave pitch frequency diagram",
           "definition": "How high or low a sound is perceived to be.",
           "characteristics": [
             "Pitch is determined by the frequency of vibrations.",
@@ -1461,6 +1497,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Volume",
+          "imageSearch": "sound wave amplitude loudness diagram",
           "definition": "The perceived loudness or softness of a sound.",
           "characteristics": [
             "Volume is determined by the amplitude (size or intensity) of the sound waves.",
@@ -1491,6 +1528,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Signal",
+          "imageSearch": "electrical signal waveform speaker diagram",
           "definition": "A changing electric current or wave that is used to transmit information.",
           "characteristics": [
             "The music from your phone is sent to your headphones as an electrical signal.",
@@ -1519,6 +1557,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Alternating",
+          "imageSearch": "alternating current direction diagram",
           "definition": "To switch back and forth repeatedly between two states or directions.",
           "characteristics": [
             "An alternating current (AC) is an electric current that rapidly changes direction. This is the type of electricity in your house outlets.",
@@ -1564,6 +1603,7 @@ window.VOCAB_DATA.units.push({
       "terms": [
         {
           "word": "Current",
+          "imageSearch": "electric current flow circuit diagram",
           "definition": "A flow of something. In this unit, it is a shorthand way of saying electric current, which is the flow of electric charge.",
           "characteristics": [
             "This is a re-emphasis of \"electric current.\"",
@@ -1593,6 +1633,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Electricity",
+          "imageSearch": "static electricity and electric current diagram",
           "definition": "A form of energy resulting from the existence of charged particles (like electrons). It can be static (like a shock from a doorknob) or dynamic as a current.",
           "characteristics": [
             "It flows through conductors (like copper wire).",
@@ -1622,6 +1663,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Magnetic Levitation",
+          "imageSearch": "magnetic levitation diagram",
           "definition": "A method of making an object float or hover by using magnetic fields to counteract the force of gravity.",
           "characteristics": [
             "Often called \"Maglev.\"",
@@ -1651,6 +1693,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Ferromagnetic",
+          "imageSearch": "ferromagnetic materials attracted to magnet diagram",
           "definition": "Describes a material that is strongly attracted to a magnet and can also be turned into a magnet itself.",
           "characteristics": [
             "These are the only materials that can be made into permanent magnets.",
@@ -1708,6 +1751,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Technology",
+          "imageSearch": "electromagnet technology examples",
           "definition": "The use of scientific knowledge to invent tools, machines, or processes that solve practical problems.",
           "characteristics": [
             "Technology is how we apply science to the real world.",
@@ -1736,6 +1780,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Motor",
+          "imageSearch": "simple electric motor diagram",
           "definition": "A machine that converts electrical energy into mechanical energy or motion.",
           "characteristics": [
             "It uses the interaction between a permanent magnet and an electromagnet.",
@@ -1765,6 +1810,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Friction",
+          "imageSearch": "friction force motion diagram",
           "definition": "A force that resists motion when two surfaces rub against each other.",
           "characteristics": [
             "It always acts in the opposite direction of the motion.",
@@ -1813,6 +1859,7 @@ window.VOCAB_DATA.units.push({
       "terms": [
         {
           "word": "Quantify",
+          "imageSearch": "measuring magnetic force experiment",
           "definition": "To measure or express something as a number.",
           "characteristics": [
             "It's how we turn observations into data.",
@@ -1842,6 +1889,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Linear",
+          "imageSearch": "linear relationship graph science",
           "definition": "Describes a relationship between two variables that forms a straight line when graphed. A constant change in one variable causes a constant change in the other.",
           "characteristics": [
             "Linear relationships are predictable. If you double the input, you double the output.",
@@ -1869,6 +1917,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Non-linear",
+          "imageSearch": "nonlinear relationship graph science",
           "definition": "Describes a relationship that does not form a straight line when graphed. The change in the output is not constant.",
           "characteristics": [
             "Linear relationships are predictable. If you double the input, you double the output.",
@@ -1896,6 +1945,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Relationship",
+          "imageSearch": "relationship between variables science graph",
           "definition": "In science, the way in which two or more variables are connected and affect each other.",
           "characteristics": [
             "We look for relationships in our data after an experiment.",
@@ -1925,6 +1975,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Variable",
+          "imageSearch": "variables in science experiment diagram",
           "definition": "Any factor, trait, or condition that can exist in differing amounts or types. It is something you can change, measure, or control in an experiment.",
           "characteristics": [
             "The three main types are independent, dependent, and controlled.",
@@ -1951,6 +2002,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Data",
+          "imageSearch": "scientific experiment data graph",
           "definition": "Facts, statistics, and measurements collected during an experiment or observation.",
           "characteristics": [
             "Data are the evidence you use to support your conclusion.",
@@ -2007,6 +2059,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Strength",
+          "imageSearch": "magnet strength magnetic field diagram",
           "definition": "The quality or state of being strong; the magnitude of a force.",
           "characteristics": [
             "We can quantify the strength of a magnet by measuring the force it can exert.",
@@ -2145,6 +2198,7 @@ window.VOCAB_DATA.units.push({
         },
         {
           "word": "Design",
+          "imageSearch": "engineering design process diagram",
           "definition": "A plan or drawing produced to show the look and function of something before it is made. In science, it can refer to the plan for an experiment or a solution.",
           "characteristics": [
             "A good experimental design is a plan that ensures a fair test.",

@@ -32,6 +32,17 @@ All words live in the `data/` folder – one file per unit (for example `data/un
 
 Words listed under `officialVocabulary` or `trickyWords` (or in `related`) that don't have a full entry yet are shown in grey and become clickable as soon as you add their Frayer Model.
 
+### Images and visual searches
+
+Images are optional. To add a Google Images link to a word, set `imageSearch` to a
+specific search phrase, such as `"speaker spider diagram"`. Use `true` to search
+for the word itself, or omit the field when images would not be helpful. The
+link opens a new tab and requires internet access; Google controls the results.
+
+To display an image directly on the page, add its path as `image`, for example
+`"images/magnet-preview.svg"`. Use images you have permission to share and
+provide any required attribution.
+
 ### Cause & effect relationships
 
 Inside each term, list related words like this:
